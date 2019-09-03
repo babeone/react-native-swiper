@@ -443,27 +443,27 @@ export default class extends Component {
         if (this.state.index === 0) {
           this.props.horizontal
             ? this.scrollView.scrollTo({
-                x: state.width,
-                y: 0,
-                animated: false
-              })
+              x: state.width,
+              y: 0,
+              animated: false
+            })
             : this.scrollView.scrollTo({
-                x: 0,
-                y: state.height,
-                animated: false
-              })
+              x: 0,
+              y: state.height,
+              animated: false
+            })
         } else if (this.state.index === this.state.total - 1) {
           this.props.horizontal
             ? this.scrollView.scrollTo({
-                x: state.width * this.state.total,
-                y: 0,
-                animated: false
-              })
+              x: state.width * this.state.total,
+              y: 0,
+              animated: false
+            })
             : this.scrollView.scrollTo({
-                x: 0,
-                y: state.height * this.state.total,
-                animated: false
-              })
+              x: 0,
+              y: state.height * this.state.total,
+              animated: false
+            })
         }
       }
     }
@@ -558,6 +558,10 @@ export default class extends Component {
     }
   }
 
+  goToFirst() {
+
+  }
+
   /**
    * Scroll to index
    * @param  {number} index page
@@ -567,8 +571,8 @@ export default class extends Component {
   scrollTo = (index, animated = true) => {
     if (
       this.internals.isScrolling ||
-      this.state.total < 2 ||
-      index == this.state.index
+      this.state.total < 2 /*||
+      index == this.state.index*/
     )
       return
 
