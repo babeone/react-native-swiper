@@ -558,10 +558,6 @@ export default class extends Component {
     }
   }
 
-  goToFirst() {
-
-  }
-
   /**
    * Scroll to index
    * @param  {number} index page
@@ -571,8 +567,8 @@ export default class extends Component {
   scrollTo = (index, animated = true) => {
     if (
       this.internals.isScrolling ||
-      this.state.total < 2 /*||
-      index == this.state.index*/
+      this.state.total < 2 ||
+      index == this.state.index
     )
       return
 
